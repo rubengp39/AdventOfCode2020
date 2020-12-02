@@ -24,23 +24,40 @@ public static void main(String[] args) {
        
        while((linea=br.readLine())!=null)
           lineas.add(linea);
+    
+       // ADV2.1
+//       for (Iterator iterator = lineas.iterator(); iterator.hasNext();) {
+//		String string = (String) iterator.next();
+//		String[] partes = string.split("-");
+//		int min = Integer.parseInt(partes[0]);
+//		String maxS = partes[1];
+//		String[] partes2 = maxS.split(" ");
+//		int max = Integer.parseInt(partes2[0]);
+//		char caracter = partes2[1].charAt(0);
+//		String frase = partes2[2];
+//		long count = frase.chars().filter(ch -> ch == caracter).count();
+//		
+//		if (count>=min && count <= max)
+//			correcto++;
+//		
+//	}
+       
+// ADV2.2
        
        for (Iterator iterator = lineas.iterator(); iterator.hasNext();) {
 		String string = (String) iterator.next();
 		String[] partes = string.split("-");
-		int min = Integer.parseInt(partes[0]);
+		int pos1 = Integer.parseInt(partes[0]);
 		String maxS = partes[1];
 		String[] partes2 = maxS.split(" ");
-		int max = Integer.parseInt(partes2[0]);
+		int pos2 = Integer.parseInt(partes2[0]);
 		char caracter = partes2[1].charAt(0);
 		String frase = partes2[2];
-		long count = frase.chars().filter(ch -> ch == caracter).count();
-		
-		if (count>=min && count <= max)
+		if((frase.indexOf(caracter,pos1-1) == (pos1-1)) && !(frase.indexOf(caracter,pos2-1) == pos2-1) || (!(frase.indexOf(caracter,pos1-1) == (pos1-1)) && (frase.indexOf(caracter,pos2-1) == pos2-1))) {
 			correcto++;
+		}
 		
 	}
-       
        System.out.println(correcto);
       
        	
