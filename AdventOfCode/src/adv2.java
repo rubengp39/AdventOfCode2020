@@ -10,6 +10,7 @@ public static void main(String[] args) {
 	File archivo = null;
     FileReader fr = null;
     BufferedReader br = null;
+    int correcto = 0;
 	try {
        // Apertura del fichero y creacion de BufferedReader para poder
        // hacer una lectura comoda (disponer del metodo readLine()).
@@ -31,12 +32,16 @@ public static void main(String[] args) {
 		String maxS = partes[1];
 		String[] partes2 = maxS.split(" ");
 		int max = Integer.parseInt(partes2[0]);
+		char caracter = partes2[1].charAt(0);
+		String frase = partes2[2];
+		long count = frase.chars().filter(ch -> ch == caracter).count();
 		
-		System.out.println(partes2[1]);
+		if (count>=min && count <= max)
+			correcto++;
 		
 	}
        
-       
+       System.out.println(correcto);
       
        	
        
