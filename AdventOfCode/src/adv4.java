@@ -22,8 +22,7 @@ public class adv4 {
 	         String linea;
 	         List<String> lineas = new ArrayList<String>();
 	         while((linea=br.readLine())!=null)
-	        	 
-	            lineas.add(linea);
+	        	 lineas.add(linea);
 	         	
 	        
 	         for (String string : lineas) {
